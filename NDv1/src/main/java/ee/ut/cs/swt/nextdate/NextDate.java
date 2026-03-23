@@ -4,11 +4,11 @@ public class NextDate {
 	
 	public NextDate(int m, int d, int y)
 	{
-		int month, day, year; //varibles holding the month, day and year args
+		//int month, day, year; //varibles holding the month, day and year args
 		//Initialize the mont, day, and year, respectively
-		month = m;
-		day = d;
-		year = y;
+		//month = m;
+		//day = d;
+		//year = y;
 	}
 	
 	
