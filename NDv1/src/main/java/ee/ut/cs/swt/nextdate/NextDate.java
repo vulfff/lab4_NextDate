@@ -75,35 +75,17 @@ public class NextDate {
 				
 		}
 		//is this month February? we need to check for leap years and such
-		else if(isFebruary(month))
-		{
-			if(day < 28) //just a standard day - increment the day
-				tomorrowDay =day +1;
-			else {
-				if(day == 28) {  //if this is not a leap year, reset day and increment the day
-					// step 1. to enable leap year functionality , uncomment lines 85-87 and 90
-					if(isLeapYear(year)) //was a leap year
-						tomorrowDay = 29;
-					else {  //was not a leap year
-						tomorrowDay = 1;
-						tomorrowMonth = 3;
-					}
-				}
-				else if(day == 29){ //29th date of February
-					// step 2. To enable leap year functionality , uncomment lines 94-97 and 99
-					if(isLeapYear(year)){  //AND a leap year - reset the day to 1, month to 3
-						tomorrowDay = 1;
-						tomorrowMonth = 3;
-					}
-					// To seed "Fault 4", comment out the lines 99-100
-//					else
-//						return "Invalid Input Date";
-				}
-				//
-				else if(day > 29) //invalid input as February will never have more than 29 days
+		else if(isFebruary(month)) {
+			if (day == 29) {
+				if (isLeapYear(year)) {  //AND a leap year - reset the day to 1, month to 3
+					tomorrowDay = 1;
+					tomorrowMonth = 3;
+				} else
 					return "Invalid Input Date";
-			}
+			} else //if(day > 29) invalid input as February will never have more than 29 days
+				return "Invalid Input Date";
 		}
+
 		//return the string representing the nextDate, in the form MM/DD/YY
 		return tomorrowMonth + "/" + tomorrowDay + "/" + tomorrowYear;
 
